@@ -1,17 +1,17 @@
-package todoApp.DELETE.todo.__ownerID
+package todoApp.DELETE.todo.__ownerid
 
-import input.user
-import input.resource
 import future.keywords.in
+import input.resource
+import input.user
 
 default allowed = false
 
 allowed {
-  user.attributes.roles[_] == "editor"
-  some id , _ in user.identities
-  id == resource.ownerID
+	user.attributes.roles[_] == "editor"
+	some id, _ in user.identities
+	id == resource.ownerid
 }
 
 allowed {
-  user.attributes.roles[_] == "admin"
+	user.attributes.roles[_] == "admin"
 }
